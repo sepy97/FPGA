@@ -1,1 +1,2 @@
-test readme
+Install opencv to run
+To compile: g++ -std=c++11 cpu-process.cpp -o test `pkg-config --cflags --libs opencv` 
