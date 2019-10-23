@@ -1,3 +1,5 @@
+//to compile: g++ -std=c++11 cpu-process.cpp -o test `pkg-config --cflags --libs opencv` 
+
 #include "process.hpp"
 
 #include <ctime>
