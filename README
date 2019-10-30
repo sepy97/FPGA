@@ -1,2 +1,5 @@
 Install opencv to run
-To compile: g++ -std=c++11 cpu-process.cpp -o test `pkg-config --cflags --libs opencv` 
+To compile: g++ -std=c++11 -I. -I$SYSTEMC_HOME/include -L. -L$SYSTEMC_HOME/lib-linux64 -Wl,-rpath=$SYSTEMC_HOME/lib-linux64 -o fltr main.cpp -lsystemc -lm `pkg-config --cflags --libs opencv`
+
+
+old: g++ -std=c++11 cpu-process.cpp -o test `pkg-config --cflags --libs opencv` 
