@@ -18,19 +18,21 @@ int main(int argc, char** argv)
   IplImage* image;
   image = cvLoadImage( argv[1]);
 
-  if (argv[1] == null)   // !image.data )
+  if (argv[1] == NULL)   // !image.data )
   {
           printf("No image parameter \n");
           return -1;
   }
 
   cv::namedWindow("Image", CV_WINDOW_AUTOSIZE);
-  cvShowImage("Image", img);
+  cvShowImage("Image", image);
+
+  IplImage* processedImage = calloc (1, sizeof(IplImage));;
 
   //Negative Effect
-  cvNot(img, img);
+  cvNot(image, processedImage);
   cv::namedWindow("NegativeEffect", CV_WINDOW_AUTOSIZE);
-  cvShowImage("NegativeEffect", img);
+  cvShowImage("NegativeEffect", processedImage);
 
   //Wait Key press
   cvWaitKey(0);
