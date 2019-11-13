@@ -26,13 +26,17 @@ int main(int argc, char** argv)
           return -1;
   }
 
+  Mat processedImage;
+
   cv::namedWindow("Image", CV_WINDOW_AUTOSIZE);
-  cvShowImage("Image", img);
+  cvShowImage("Image", image);
 
   //Negative Effect
-  cvNot(img, img);
+  cvNot(image, processedImage);
   cv::namedWindow("NegativeEffect", CV_WINDOW_AUTOSIZE);
-  cvShowImage("NegativeEffect", img);
+  cvShowImage("NegativeEffect", processedImage);
+
+  imwrite (strcat(argv[2], argv[1]), processedImage);
 
   //Wait Key press
   cvWaitKey(0);
