@@ -15,8 +15,10 @@ int main(int argc, char** argv)
         printf("usage: DisplayImage.out <Image_Path>\n");
         return -1;
   }
-  IplImage* image;
-  image = cvLoadImage( argv[1]);
+  Mat  image;
+  printf ("%s \n", argv[1]);
+      image = imread( argv[1], 1 );
+  unsigned char* __restrict__ imageData = image.data;
 
   if (image.empty())   // !image.data )
   {
