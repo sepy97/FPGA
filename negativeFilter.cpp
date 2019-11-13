@@ -27,7 +27,7 @@ int main(int argc, char** argv)
   cv::namedWindow("Image", CV_WINDOW_AUTOSIZE);
   cvShowImage("Image", image);
 
-  IplImage* processedImage = calloc (1, sizeof(IplImage));;
+  IplImage* processedImage = (IplImage*) calloc(1, sizeof(IplImage));;
 
   //Negative Effect
   cvNot(image, processedImage);
