@@ -15,28 +15,22 @@ int main(int argc, char** argv)
         printf("usage: DisplayImage.out <Image_Path>\n");
         return -1;
   }
-  Mat  image;
-  printf ("%s \n", argv[1]);
-      image = imread( argv[1], 1 );
-  unsigned char* __restrict__ imageData = image.data;
+  IplImage* image;
+  image = cvLoadImage( argv[1]);
 
-  if (image.empty())   // !image.data )
+  if (argv[1] == null)   // !image.data )
   {
-          printf("No image data \n");
+          printf("No image parameter \n");
           return -1;
   }
 
-  Mat processedImage;
-
   cv::namedWindow("Image", CV_WINDOW_AUTOSIZE);
-  cvShowImage("Image", image);
+  cvShowImage("Image", img);
 
   //Negative Effect
-  cvNot(image, processedImage);
+  cvNot(img, img);
   cv::namedWindow("NegativeEffect", CV_WINDOW_AUTOSIZE);
-  cvShowImage("NegativeEffect", processedImage);
-
-  imwrite (strcat(argv[2], argv[1]), processedImage);
+  cvShowImage("NegativeEffect", img);
 
   //Wait Key press
   cvWaitKey(0);
