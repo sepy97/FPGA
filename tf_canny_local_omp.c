@@ -93,6 +93,12 @@ void radian_direction(short int *delta_x, short int *delta_y, int rows,
     int cols, float **dir_radians, int xdirtag, int ydirtag);
 double angle_radians(double x, double y);
 
+void non_max_supp(short *mag, short *gradx, short *grady, int nrows, int ncols,
+    unsigned char *result);
+
+void follow_edges(unsigned char *edgemapptr, short *edgemagptr, short lowval,
+   int cols)
+
 main(int argc, char *argv[])
 {
    char *infilename = NULL;  /* Name of the input image */
