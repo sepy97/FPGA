@@ -97,9 +97,9 @@ void non_max_supp(short *mag, short *gradx, short *grady, int nrows, int ncols,
     unsigned char *result);
 
 void follow_edges(unsigned char *edgemapptr, short *edgemagptr, short lowval,
-   int cols)
+		  int cols);
 
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
    char *infilename = NULL;  /* Name of the input image */
    char *dirfilename = NULL; /* Name of the output gradient direction image */
